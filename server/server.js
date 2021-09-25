@@ -9,9 +9,9 @@ app.use(bodyParser.json())
 // create application/x-www-form-urlencoded parser
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(require('./routes/usuario')) //importamos las rutas
 
-
+//Configuracion global de rutas
+app.use(require('./routes/index')) //importamos las rutas
 
 
 mongoose.connect(process.env.urlbase, (err,res)=>{//conecion bd mondo
