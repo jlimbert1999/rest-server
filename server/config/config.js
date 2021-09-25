@@ -23,3 +23,7 @@ if (process.env.NODE_ENV === 'dev') {
     urlBD = 'mongodb+srv://root:1234jose@cluster0.rwkz9.mongodb.net/cafe?retryWrites=true&w=majority'
 }
 process.env.urlbase = urlBD
+
+
+//GOGLE CLIETNE
+process.env.CLIENT_ID = process.env.CLIENT_ID || '566411830384-fiffqvlue20s75pkhmnislt3or6sagt0.apps.googleusercontent.com'
