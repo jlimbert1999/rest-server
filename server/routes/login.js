@@ -93,7 +93,6 @@ app.post('/google', async (req, res) => {
                         message:"debe de usar autenticacion normal"
                     }
                 })
-
             }
             else{
                 let token=jwt.sign({
