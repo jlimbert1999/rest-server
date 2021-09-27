@@ -35,8 +35,27 @@ let verificarAdminRol= (req, res, next) => {
     }
 }
 
+//VERIFICA TOKEN IMG
+let verificarTokenImg=(req,res,next)=>{
+    let token=req.query.token
+
+    jwt.verify(token,process.env.SEED,(err, decoded)=>{
+        if(err){
+            return res.status(400).json({
+                ok:false,
+                err:{
+                    message:"el token no es valido"
+                }
+            })
+        }
+        req.usuario=decoded.usuario;
+        next()
+    })
+
+}
 module.exports={
     verificarToken,
-    verificarAdminRol
+    verificarAdminRol,
+    verificarTokenImg
 }
     
